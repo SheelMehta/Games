@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cows and Bulls Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Cows and Bulls Game</h1>
+        <p>Guess the 4-digit number (each digit must be unique).</p>
+
+        <!-- Number Buttons for toggling -->
+        <div id="numberSelector">
+            <p>Click numbers to toggle:</p>
+            <div class="number-buttons">
+                <button class="num-btn" onclick="toggleNumber(this)">0</button>
+                <button class="num-btn" onclick="toggleNumber(this)">1</button>
+                <button class="num-btn" onclick="toggleNumber(this)">2</button>
+                <button class="num-btn" onclick="toggleNumber(this)">3</button>
+                <button class="num-btn" onclick="toggleNumber(this)">4</button>
+                <button class="num-btn" onclick="toggleNumber(this)">5</button>
+                <button class="num-btn" onclick="toggleNumber(this)">6</button>
+                <button class="num-btn" onclick="toggleNumber(this)">7</button>
+                <button class="num-btn" onclick="toggleNumber(this)">8</button>
+                <button class="num-btn" onclick="toggleNumber(this)">9</button>
+            </div>
+        </div>
+
+        <input type="text" id="guessInput" maxlength="4" placeholder="Enter your guess">
+        <button onclick="makeGuess()">Submit Guess</button>
+        <p id="result"></p>
+        
+        <h2>Previous Guesses</h2>
+        <ul id="guessList"></ul>  <!-- This will display the guesses -->
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
